@@ -25,8 +25,30 @@ namespace Lab1_ASPNetConnectedMode.BLL
         {
            EmployeeDB.SaveRecord(emp);
         }
-
-
+        public void UpdateEmployee(Employee emp)
+        {
+            EmployeeDB.UpdateRecord(emp);
+        }
+        public void DeleteEmployee(int id)
+        {
+            EmployeeDB.DeleteRecord(id);
+        }
+        public List<Employee> GetAllEmployee()
+        {
+            return EmployeeDB.ShowAll();
+        }
+        public Employee SearchById( int id)
+        {
+            return EmployeeDB.GetEmployee(id);
+        }
+        public List<Employee> SearchByFirstName(String Input)
+        {
+            return EmployeeDB.SearchRecordByFirstName(Input);
+        }
+        public List<Employee> SearchByLastName(String Input)
+        {
+            return EmployeeDB.SearchRecordByLastName(Input);
+        }
 
     }
 }

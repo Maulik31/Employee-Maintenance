@@ -7,8 +7,8 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 40%;
-            height: 172px;
+            width: 43%;
+            height: 289px;
         }
         .auto-style2 {
             width: 492px;
@@ -19,20 +19,23 @@
         .auto-style4 {
             color: #FF0000;
         }
-        .auto-style5 {
-            width: 284px;
-        }
-        .auto-style6 {
-            width: 381px;
-        }
         .auto-style7 {
-            width: 291px;
+            width: 290px;
+        }
+        .auto-style8 {
+            width: 536px;
+        }
+        .auto-style9 {
+            width: 513px;
+        }
+        .auto-style10 {
+            width: 454px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="container-fluid">
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style3" colspan="5">
@@ -40,56 +43,80 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">Employee ID</td>
-                    <td class="auto-style6">
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <td class="auto-style10">Employee ID</td>
+                    <td class="auto-style9">
+                        <asp:TextBox ID="txtEmployeeId" runat="server"></asp:TextBox>
                     </td>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style5">First Name</td>
-                    <td class="auto-style6">
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <td class="auto-style8">
+                        <asp:Button ID="btnSave"  runat="server" OnClick="btnSave_Click" Text="Save" Width="96px" />
                     </td>
-                    <td>&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">Last Name</td>
-                    <td class="auto-style6">
-                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <td class="auto-style10">First Name</td>
+                    <td class="auto-style9">
+                        <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
                     </td>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style5">Job Title</td>
-                    <td class="auto-style6">
-                        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                    <td class="auto-style8">
+                        <asp:Button ID="btnUpdate" runat="server" Text="Update" Width="96px" OnClick="btnUpdate_Click" />
                     </td>
-                    <td>&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">Last Name</td>
+                    <td class="auto-style9">
+                        <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
+                    </td>
+                    <td class="auto-style8">
+                        <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="96px" OnClick="btnDelete_Click" />
+                    </td>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">Job Title</td>
+                    <td class="auto-style9">
+                        <asp:TextBox ID="txtJobTitle" runat="server"></asp:TextBox>
+                    </td>
+                    <td class="auto-style8">
+                        <asp:Button ID="btnListAll" runat="server"  class="btn btn-info" OnClick="btnListAll_Click" Text="List All" Width="96px" />
+                    </td>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style9">&nbsp;</td>
+                    <td class="auto-style8">
+                        <asp:Label ID="lblMsg" runat="server" Text="Label"></asp:Label>
+                    </td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style10">Search By</td>
+                    <td class="auto-style9">
+                        <asp:DropDownList ID="DropDownList1" runat="server" Height="26px" Width="167px">
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style8">
+                        <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                    </td>
+                    <td class="auto-style2">
+                        <asp:Button ID="btnSearch" runat="server" Text="Search" Width="96px" OnClick="btnSearch_Click" />
+                    </td>
+                    <td class="auto-style7">
+                        <asp:Button ID="btnClear" runat="server" OnClick="btnClear_Click" Text="Clear List" />
+                    </td>
                 </tr>
             </table>
+        </div>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Employee List</h2>
+        <div>
+            <asp:GridView ID="GridView1" runat="server" Height="190px" Width="652px">
+            </asp:GridView>
         </div>
     </form>
 </body>
